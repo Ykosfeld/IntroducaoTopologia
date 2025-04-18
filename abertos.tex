@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\newtheorem*{definition}{Definição}
+\newtheorem*{theorem}{Teorema}
+\newtheorem*{exemple}{Exemplo}
+\newtheorem*{atencao}{Atenção}
+\newtheorem*{proposicao}{Proposição}
+\usepackage{mathtools}
+\usepackage{xfrac}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclareMathOperator{\Ima}{Im}
+
+\setlength{\textwidth}{450pt}
+\setlength{\marginparwidth}{0pt}
+\setlength{\marginparsep}{0pt}
+\usepackage[left=2.5cm, right=2.5cm]{geometry}
+
+\title{Abertos \\ \large Introdução a Topologia}
+\author{Yuri Kosfeld}
+\date{Abril 2025}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{definition}
+    Seja M um conjunto. Uma \textbf{distância} em M é uma função $d: M \times M \rightarrow \left[0, \infty \right)$
+    que satisfaz as seguintes propriedades: 
+    \begin{enumerate}
+        \item $d(x,x) = 0$ para todo $x \in M$.
+        \item $d(x,y) > 0$ para todos $x, y \in M$ com $x \neq y$.
+        \item $d(x, y) = d(y, x)$ para todos $x,y \in M$.
+        \item $d(x,z) \leq d(x, y) + d(y, z)$ para todos $x, y, z \in M$.
+    \end{enumerate}
+\end{definition}
+
+\end{document}
