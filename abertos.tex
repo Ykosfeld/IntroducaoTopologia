@@ -18,7 +18,7 @@
 \setlength{\marginparsep}{0pt}
 \usepackage[left=2.5cm, right=2.5cm]{geometry}
 
-\title{Abertos \\ \large Introdução a Topologia}
+\title{Conjuntos Abertos \\ \large Introdução a Topologia}
 \author{Yuri Kosfeld}
 \date{Abril 2025}
 
@@ -27,7 +27,11 @@
 
 \maketitle
 
-\begin{definition}
+O estudo de conjuntos abertos é motivado por querer entender a forma de um espaço metrico olhando 
+para as vizinhanças de todos os pontos desse espaço. Vamos relembrar alguns
+detalhes importantes sobre distâncias.
+
+\begin{definition}[\textbf{Distância}]
     Seja M um conjunto. Uma \textbf{distância} em M é uma função $d: M \times M \rightarrow \left[0, \infty \right)$
     que satisfaz as seguintes propriedades: 
     \begin{enumerate}
@@ -37,5 +41,37 @@
         \item $d(x,z) \leq d(x, y) + d(y, z)$ para todos $x, y, z \in M$.
     \end{enumerate}
 \end{definition}
+
+Conseguimos agora então entender a proximidade de dois pontos. Para então formalizar matematicamente
+essa ideia de vizinhança de um ponto, vamos definir o que é uma \textbf{bola aberta}.
+
+\begin{definition}[\textbf{Bola Aberta}]
+    Sejam (M, d) um espaço métrico, $x\in M$ e $\varepsilon > 0$. Definimos a \textbf{bola aberta}
+    centrada em x e de raio $\varepsilon$ como:
+    \[ B(x, \varepsilon) = \{ y \in M \: | \: d(x, y) < \varepsilon \} \]
+\end{definition}
+
+Não é dificil notar que em $\mathbb{R}$ com a distância usual, temos que a bola $B(x, \varepsilon) = (x - \varepsilon, x + \varepsilon)$.
+Pela definição, segue que $B(x, \varepsilon) = \{ y \in \mathbb{R} \: | \: | x - y | < \varepsilon \}$.
+Então tomando $y \in B(x, \varepsilon)$ temos $| x - y | < \varepsilon$ e então
+\begin{align*}
+    -\varepsilon < x - y < \varepsilon \\
+    -\varepsilon < y - x < \varepsilon \\
+    x - \varepsilon < y < x + \varepsilon\\
+    \Leftrightarrow  y \in (x - \varepsilon, x + \varepsilon)
+\end{align*}
+
+Outro exemplo é a bola em $\mathbb{R}^2$, com a distância euclidiana centrada na origem:
+\[B((0, 0), \varepsilon) = \{ (x,y) \in \mathbb{R}^2 \: | \: \sqrt{x^2 + y^2} < \varepsilon\} = \{ (x,y) \in \mathbb{R}^2 \: | \: x^2 + y^2 < \varepsilon^2\}\]
+Assim note, que com essa distância, as bolas em $\mathbb{R}^2$ são discos.
+
+Um resultado interessante é o que acontecem com bolas no espaço produto levando em conta a distância produto.
+Sejam $(M_1, d_1), \dots ,(M_n, d_n)$ espaços metrico, e defina $M = M_1 \times \dots \times M_n $ com a distância produto.
+Vamos mostrar que $B((x_1, \dots, x_n), \varepsilon) = B(x_1, \varepsilon) \times \dots \times B(x_n, \varepsilon)$.
+Lembre que a distância produto é dada por 
+\[d_{max}(x, y) = \max\{d_1(x_1, y_1), \dots, d_n(x_n, y_n)\}\]
+Então segue que se $y \in B((x_1, \dots, x_n), \varepsilon)$, $d_i(x_i, y_i) < \varepsilon \quad \forall i$.
+Equivalente a dizer que $\forall i \quad y_i \in B(x_i, \varepsilon)$ e então $y \in  B(x_1, \varepsilon) \times \dots \times  B(x_n, \varepsilon)$.
+Agora tome $y \in  B(x_1, \varepsilon) \times \dots \times  B(x_n, \varepsilon)$. 
 
 \end{document}

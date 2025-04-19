@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1745003344.52335 "e:/Yuri/Documentos/Faculdade/P7/IntroducaoTopologia/abertos.tex" "abertos.pdf" "abertos" 1745003345.57562 0
+["pdflatex"] 1745022623.99933 "e:/Yuri/Documentos/Faculdade/P7/IntroducaoTopologia/abertos.tex" "abertos.pdf" "abertos" 1745022625.0692 0
   "C:/Users/Yuri/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1745002579 81068 299f700eb05b1217173e62b88b513bd0 ""
   "C:/Users/Yuri/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1745002557 13147770 4719b12f7585655b4bcadc23fc6d737d ""
   "C:/Users/Yuri/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -26,12 +26,16 @@
   "C:/Users/Yuri/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmti10.tfm" 1136765053 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "C:/Users/Yuri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1247596666 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "C:/Users/Yuri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb" 1247596667 36554 b67dc2cfa451409e100b3fcf5f506509 ""
+  "C:/Users/Yuri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1247596667 30251 6afa5cb1d0204815a708a080681d4674 ""
   "C:/Users/Yuri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1247596667 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "C:/Users/Yuri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1247596667 36281 c355509802a035cadc5f15869451dcee ""
   "C:/Users/Yuri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
   "C:/Users/Yuri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "C:/Users/Yuri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247596666 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
+  "C:/Users/Yuri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1247596667 32762 7fee39e011c23b3589931effd97b9702 ""
   "C:/Users/Yuri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "C:/Users/Yuri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1247596667 37944 359e864bd06cde3b1cf57bb20757fb06 ""
+  "C:/Users/Yuri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1247596673 34694 870c211f62cb72718a00e353f14f254d ""
   "C:/Users/Yuri/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Users/Yuri/AppData/Local/Programs/MiKTeX/tex/generic/iftex/iftex.sty" 1734114575 7984 7dbb9280f03c0a315425f1b4f35d43ee ""
   "C:/Users/Yuri/AppData/Local/Programs/MiKTeX/tex/generic/iftex/ifvtex.sty" 1734114575 1057 525c2192b5febbd8c1f662c9468335bb ""
@@ -61,9 +65,9 @@
   "C:/Users/Yuri/AppData/Local/Programs/MiKTeX/tex/latex/mathtools/mhsetup.sty" 1728300125 5582 a43dedf8e5ec418356f1e9dfe5d29fc3 ""
   "C:/Users/Yuri/AppData/Local/Programs/MiKTeX/tex/latex/tools/calc.sty" 1730400552 10214 61188260d324e94bc2f66825d7d3fdf4 ""
   "C:/Users/Yuri/AppData/Local/Programs/MiKTeX/tex/latex/xfrac/xfrac.sty" 1718270407 14945 a207ee7fd6b8cf6d82afb367c583ddd3 ""
-  "abertos.aux" 1745003345 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "abertos.tex" 1745003343 1190 abdcb329bb7cff755ca8bce04f33ad6f ""
-  "e:/Yuri/Documentos/Faculdade/P7/IntroducaoTopologia/abertos.tex" 1745003343 1190 abdcb329bb7cff755ca8bce04f33ad6f ""
+  "abertos.aux" 1745022624 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
+  "abertos.tex" 1745022623 3636 708156df37b757ca8a2ae839252db714 ""
+  "e:/Yuri/Documentos/Faculdade/P7/IntroducaoTopologia/abertos.tex" 1745022623 3636 708156df37b757ca8a2ae839252db714 ""
   (generated)
   "abertos.aux"
   "abertos.log"
