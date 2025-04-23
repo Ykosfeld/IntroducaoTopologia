@@ -67,11 +67,12 @@ Assim note, que com essa distância, as bolas em $\mathbb{R}^2$ são discos.
 
 Um resultado interessante é o que acontecem com bolas no espaço produto levando em conta a distância produto.
 Sejam $(M_1, d_1), \dots ,(M_n, d_n)$ espaços metrico, e defina $M = M_1 \times \dots \times M_n $ com a distância produto.
-Vamos mostrar que $B((x_1, \dots, x_n), \varepsilon) = B(x_1, \varepsilon) \times \dots \times B(x_n, \varepsilon)$.
+Vamos mostrar que a bola produto é o produto das bolas, ou seja, $B((x_1, \dots, x_n), \varepsilon) = B(x_1, \varepsilon) \times \dots \times B(x_n, \varepsilon)$.
 Lembre que a distância produto é dada por 
 \[d_{max}(x, y) = \max\{d_1(x_1, y_1), \dots, d_n(x_n, y_n)\}\]
 Então segue que se $y \in B((x_1, \dots, x_n), \varepsilon)$, $d_i(x_i, y_i) < \varepsilon \quad \forall i$.
 Equivalente a dizer que $\forall i \quad y_i \in B(x_i, \varepsilon)$ e então $y \in  B(x_1, \varepsilon) \times \dots \times  B(x_n, \varepsilon)$.
-Agora tome $y \in  B(x_1, \varepsilon) \times \dots \times  B(x_n, \varepsilon)$. 
+Agora tome $y \in  B(x_1, \varepsilon) \times \dots \times  B(x_n, \varepsilon)$, note que para cada $i$, $y_i \in B(x_i, \varepsilon)$.
+Logo pela definição de bola e da distância produto vale $d(y, x) < \varepsilon$. Donde segue que $y \in B(x, \varepsilon)$.
 
 \end{document}
