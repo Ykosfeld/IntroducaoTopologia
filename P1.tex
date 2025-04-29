@@ -24,4 +24,93 @@
 
 \begin{document}
 
+\maketitle
+
+\begin{definition}[\textbf{Distância}]
+    Seja M um conjunto. Uma \textbf{distância} em M é uma função $d: M \times M \rightarrow \left[0, \infty \right)$
+    que satisfaz as seguintes propriedades: 
+    \begin{enumerate}
+        \item $d(x,x) = 0$ para todo $x \in M$.
+        \item $d(x,y) > 0$ para todos $x, y \in M$ com $x \neq y$.
+        \item $d(x, y) = d(y, x)$ para todos $x,y \in M$.
+        \item $d(x,z) \leq d(x, y) + d(y, z)$ para todos $x, y, z \in M$.
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[\textbf{Bola Aberta}]
+    Sejam (M, d) um espaço métrico, $x\in M$ e $\varepsilon > 0$. Definimos a \textbf{bola aberta}
+    centrada em x e de raio $\varepsilon$ como:
+    \[ B(x, \varepsilon) = \{ y \in M \: | \: d(x, y) < \varepsilon \} \]
+\end{definition}
+
+\begin{definition}[\textbf{Bola da distância induzida}]
+    \[B_A(x, \varepsilon) = \{y \in A \: | \: d_A (x,y) < \varepsilon \}\]
+    \[B_A(x, \varepsilon) = B(x, \varepsilon) \cap A\]
+\end{definition}
+
+\begin{definition}[\textbf{Conjunto Aberto}]
+    $U \subset M$ é \textbf{conjunto aberto} se $\forall \: x \in U$ $\exists \: \varepsilon > 0$ tal que $B(x, \varepsilon) \subset U$.
+\end{definition}
+
+\begin{definition}[\textbf{Vizinhança}]
+    U aberto tal que $x \in U$.
+\end{definition}
+
+\begin{definition}[\textbf{Topologia}]
+    Seja (M, d) espaço metrico, dizemos que \textbf{topologia} é a familia de todos os subconjuntos abertos de M.
+    \[ \mathcal{T} = \{ U \subset M \: | \: \text{U é aberto}\} \]
+\end{definition}
+
+\begin{definition}[\textbf{Aberto EM}]
+    Dizemos que U é \textbf{aberto em A} $\Leftrightarrow$ $\exists \: V$ aberto em M tal que $U = V \cap A$.
+\end{definition}
+
+\begin{definition}[\textbf{Ponto de Interior}]
+    Dizemos que $x \in A$ é um \textbf{ponto de interior} de A se existir U vizinhança de x tal que $U \subset A$.
+    Temos então int(A).
+\end{definition}
+
+\begin{proposicao}
+    Valem:
+    \begin{enumerate}
+        \item $int(A) \subset A$.
+        \item $int(int(A)) = int(A)$
+        \item $int(A \cap B) = int(A) \cap int(B)$
+        \item $int(A \cup B) \subset int(A) \cup int(B)$
+    \end{enumerate}
+\end{proposicao}
+
+\begin{definition}[\textbf{Ponto Limite}]
+    Seja (M, d) espaço metrico e $A \subset M$. Dizemos que $x \in M$ é \textbf{ponto limite} de A, se $\forall \: \varepsilon > 0$ temos que
+    $B(x, \varepsilon) \cap A \setminus {x} \neq \emptyset $. Conjunto de todos os pontos limites de A: A'.
+\end{definition}
+
+\begin{definition}[\textbf{Ponto Isolado}]
+    Dizemos que x é \textbf{ponto isolado} de A, se $x \in A \setminus A'$, ou seja, $\exists \: \varepsilon > 0$ tal que 
+    $B(x, \varepsilon) \cap A \setminus {x} = \emptyset $
+\end{definition}
+
+\begin{definition}[\textbf{Conjunto Fechado}]
+    Dizemos que $F \subset M$ é um \textbf{conjunto fechado} se $F' \subset F$.
+\end{definition}
+
+\begin{proposicao}
+    (M, d) espaço metrico e $A \subset M$. A é aberto $\Leftrightarrow$ $A^c$ é fechado.
+\end{proposicao}
+
+\begin{definition}[\textbf{Fecho}]
+    Definimos o \textbf{fecho} de um conjunto A como $\overline{A} = A \cup A'$.
+\end{definition}
+
+\begin{proposicao} Valem:
+    \begin{enumerate}
+        \item  $x \in \overline{A} \Leftrightarrow \forall \: \varepsilon > 0 \: B(x, \varepsilon) \cap A \neq \emptyset$
+        \item $ \text{F é fechado} \Leftrightarrow \overline{F} = F$
+    \end{enumerate}
+\end{proposicao}
+
+\begin{definition}[\textbf{Denso}]
+    (M, d) espaço metrico, $A \subset M$. Dizemos que A é \textbf{denso} se $\overline{A} = M$.
+\end{definition}
+
 \end{document}
