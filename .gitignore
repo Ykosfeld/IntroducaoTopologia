@@ -1,6 +1,14 @@
-.aux
-.log
-.fls
-.out
-.gz
-.fdb_latexmk
+## Core latex/pdflatex auxiliary files:
+**/*.aux
+**/*.lof
+**/*.log
+**/*.lot
+**/*.fls
+**/*.out
+**/*.toc
+**/*.fmt
+**/*.fot
+**/*.cb
+**/*.cb2
+**/*.lb
+**/P1.fdb_atexmk
