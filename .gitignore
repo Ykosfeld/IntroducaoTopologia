@@ -11,4 +11,8 @@
 **/*.cb
 **/*.cb2
 **/*.lb
-**/P1.fdb_atexmk
+**/*.fdb_latexmk
+**/*.synctex.gz
+
+**/*.xopp
+notas
