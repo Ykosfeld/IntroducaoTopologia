@@ -14,5 +14,5 @@
 **/*.fdb_latexmk
 **/*.synctex.gz
 
-**/*.xopp
+## Notas
 notas
