@@ -1,0 +1,244 @@
+\documentclass{article}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\newtheorem*{definition}{Definição}
+\newtheorem*{theorem}{Teorema}
+\newtheorem{corolario}{Corolário}
+\newtheorem*{exemplo}{Exemplo}
+\newtheorem*{atencao}{Atenção}
+\newtheorem*{proposicao}{Proposição}
+\newtheorem*{lema}{Lema}
+\newtheorem*{prova}{Demonstração}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\eps}{\varepsilon}
+
+\usepackage{mathtools}
+\usepackage{xfrac}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclareMathOperator{\Ima}{Im}
+
+\setlength{\textwidth}{450pt}
+\setlength{\marginparwidth}{0pt}
+\setlength{\marginparsep}{0pt}
+\usepackage[left=2.5cm, right=2.5cm]{geometry}
+
+\title{Definições, Propriedades e Resultados P2 \\ \large Introdução a Topologia}
+\author{Yuri Kosfeld}
+\date{Abril 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Variedades}
+
+\begin{definition}[\textbf{Variedade e Atlas}]
+    Dado M um espaço métrico, dizemos que M é uma \textbf{variedade de dimensão n}
+    se, existe uma família de funções $A = \{ \varphi_i: U_i \subset M \rightarrow V_i \subset \R^n\}$
+    que satisfazem:
+    \begin{enumerate}
+        \item $\forall i \in I$, $U_i$ é aberto em M e $V_i$ é aberto em $\R^n$.
+        \item $\bigcup_{i \in I} U_i = M$.
+        \item $\forall i \in I$, $\varphi_i$ é um homeomorfismo.
+    \end{enumerate}
+    Denotaremos por $M^n$.
+    Definimos também A como o \textbf{atlas da variedade}.
+\end{definition}
+
+\begin{exemplo}
+    \
+    \begin{itemize}
+        \item $\R^n$ é uma variedade
+        \item qualquer aberto de $\R^n$ é uma variedade
+        \item $S^1$ é uma variedade
+    \end{itemize}
+\end{exemplo}
+
+\begin{definition}[\textbf{Fibrado}]
+    Sejam M, N e F espaços métricos. M é um \textbf{fibrado com base N e fibras F} se existem:
+    \begin{enumerate}
+        \item Uma aplicação $\pi: M \rightarrow N$ continua tal que $\forall x \in N$, 
+            a fibra $\pi^{-1}(x)$ é homeomorfa a F.
+        \item Uma família de abertos $\{U_i\}_{i \in I}$ de N tal que 
+            \[\bigcup_{i \in I} U_i = N\]
+        \item Para cada $i \in I$, existe um homeomorfismo $\varphi_i: U_i \times F \rightarrow \pi^{-1}(U_i) \subset M$
+            satisfazendo 
+            \[\pi(\varphi(x, v)) = x \quad \forall x \in U_i, v \in F\]
+    \end{enumerate}
+\end{definition}
+
+\section{Bases}
+
+\begin{definition}[\textbf{Base}]
+    Dado M um espaço métrico. Uma \textbf{base} de M é uma coleção de abertos
+    $\beta = \{\beta_i\}_{i \in I}$ que verifica:
+    $\forall U \subset M$ aberto, $\exists I' \subset I$ tal que 
+    \[U = \bigcup_{i \in I'} \beta _i\] 
+\end{definition}
+
+\begin{exemplo}
+    $\beta = \{B(x, r) \: | \: x \in M, r > 0\}$ é uma base.
+\end{exemplo}
+
+\begin{lema}
+    Seja M espaço métrico e $\beta = \{\beta_i\}_{i \in I}$ uma coleção de abertos.
+    Se $\beta$ satisfaz: $\forall U \subset M$ aberto e $\forall x \in U$, $\exists i \in I$ 
+    tal que $x \in B_i \subset U$, então $\beta$ é uma base de M.
+\end{lema}
+
+\begin{prova}
+    Seja U aberto de M. 
+    Queremos mostrar que U é união de elementos de $\beta$.
+    Por hipotese: $\forall x \in U$, $\exists i(x) \in I$ tal que $x \in B_{i(x)} \subset U$.
+    Logo 
+    \[U = \bigcup_{x \in U} x \subset \bigcup_{x \in U} B_{i(x)} \subset \bigcup_{x \in U} U = U\]
+    \[\Rightarrow U = \bigcup_{x \in U} B_{i(x)}\]
+     e assim $\beta$ é base.
+\end{prova}
+
+\begin{atencao}
+    As bases não são únicas!
+\end{atencao}
+
+\begin{definition}[\textbf{Base Enumerável}]
+    Um espaço métrico M admite \textbf{base enumerável} se existe $\beta = \{\beta_i\}_{i \in I}$ base
+    tal que I é enumerável. 
+\end{definition}
+
+\begin{exemplo}
+    $\R$ admite base enumerável: $\beta = \{ (a, b) \subset \R \: | \: a, b \in \mathbb{Q} \}$.
+    Sabemos que $\mathbb{Q}$ é enumerável e $\beta$ é base pelo \textbf{lema} anterior:
+    dado $U \in \R$ e $x \in U$, temos que $x \in (a, b) \subset B(x, \eps) \subset U$.
+\end{exemplo}
+
+\begin{atencao}
+    O produto de espaços que admitem base enumerável também admite base enumerável.
+\end{atencao}
+
+\begin{proposicao}
+    Seja M espaço métrico. São equivalentes:
+    \begin{enumerate}
+        \item M admite base enumerável.
+        \item $\exists D \subset M$ enumerável e denso (M é separavél).
+    \end{enumerate}
+\end{proposicao}
+
+\begin{prova}
+    $(1) \Rightarrow (2)$: \\
+    Seja $\beta = \{ \beta_k\}$ base enumerável. 
+    Para cada $k \in \mathbb{N}$ escolhemos $x_k \in \beta_k$,
+    e então defina $D = \{x_k \: | \: k \in \mathbb{N}\}$. 
+    D é natualmente enumerável pela construção, então precisamos verificar ainda que D é denso.
+    Para ver que D é denso, basta ver que dado U aberto, vale $U \cap D \neq \emptyset$.
+    Dado U, $\exists \: k$ tal que $\beta_k \neq \emptyset$ e $\beta_k \subset U$.
+    Logo $x_k \in D \cap U$, e portanto D é denso.\\
+    $(2) \Rightarrow (1)$: \\
+    Seja D denso e enumerável e considere
+    \[\beta = \{B(y, r) \: | \: y \in D, r \in \mathbb{Q}^+\}\]
+    Temos que $\beta$ é enumerável e é base pelo $\textbf{lema}$:\\
+    Seja U aberto e $x \in U$. Queremos B elemento da base tal que $x \in B \subset U$.
+    Temos $\exists \: y \in D \cap B(x, \eps / 2)$, ou seja, $d(x, y) < \eps / 2$.
+    Temos também, $\exists \: r \in \mathbb{Q}$ tal que $d(x, y) < r < \eps / 2$.
+    Para este r, vale que $x \in B(y, r)$. 
+    Assim $B(y, r) \subset B(x, \eps) \subset U$.
+\end{prova}
+
+\begin{definition}[\textbf{Base Local}]
+    Dado M espaço métrico e $x \in M$, uma \textbf{base local de M em x} é $\beta = \{\beta_i\}_{i \in I}$
+    de vizinhanças de x que verifica:
+    $\forall \: U$ vizinhança de x, $\exists \: \beta_i \in \beta$ tal que $x \in B_i \subset U$.
+\end{definition}
+
+\begin{definition}[\textbf{Primeiro Axioma de Enumerabilidade}]
+    Todo ponto admite base local enumerável.
+\end{definition}
+
+\begin{atencao}
+    Todo espaço métrico satisfaz o Primeiro Axioma de Enumerabilidade. Basta tomar:
+    \[\beta = \{ B(x, 1/k) \}\]
+\end{atencao}
+
+\section{Conexidade}
+
+\begin{definition}[\textbf{Separação}]
+    Seja M espaço métrico Uma \textbf{separação} de M é um par de subconjuntos de M $\{ A, B\}$ que verificam:
+    \begin{itemize}
+        \item $A \cup B = M$.
+        \item $A \cap B = \emptyset$.
+        \item A e B são abertos.
+    \end{itemize}
+    Chamamos $\{M, \emptyset\}$ de \textbf{separação trivial}.
+\end{definition}
+
+\begin{definition}[\textbf{Conexo}]
+    M é \textbf{conexo} se a única separação que admite é a trivial. Se M não é conexo, dizemos que M é \textbf{desconexo}.
+\end{definition}
+
+\begin{atencao}
+    Se $\{A, B\}$ é separação, então A e B são fechados.
+\end{atencao}
+
+\begin{proposicao}
+    M é conexo se e somente se os únicos conjuntos abertos e fechados de M são M e $\emptyset$.
+\end{proposicao}
+
+\begin{prova}
+    COMPLETAR!
+\end{prova}
+
+\begin{atencao}
+    $X \subset M$ é conexo se X com a topologia relativa é conexo. 
+\end{atencao}
+
+\begin{proposicao}
+    Se $f: M \rightarrow N$ é contínua e M é conexo, então $f(M)$ também é conexo.
+\end{proposicao}
+
+\begin{prova}
+    Queremos ver que f(M) é conexo. Seja $\{A, B\}$ separação de f(M).
+    $\exists \: A', B'$ abertos em N tais que 
+    \[A' \cap f(M) = A\]
+    \[B' \cap f(M) = B\]
+    Como f é contínua, $f^{-1}(A')$ e $f^{-1}(B')$ são abertos de M.
+    Logo
+    \begin{align*}
+        f^{-1}(A') &= f^{-1}(f(M) \cap A') \\
+                   &= f^{1}(A) 
+    \end{align*}
+    e também $f^{-1}(B') = f^{-1}(B)$.\\
+    Vamos mostrar que $\{f^{-1}(A), f^{-1}(B)\}$ é separação de M.
+    \begin{itemize}
+        \item $f^{-1}(A)$ e $f^{-1}(B)$ são abertos.
+        \item $M = f^{-1}(f(M)) = f^{-1}(A \cup B) = f^{-1}(A) \cup f^{-1}(B)$.
+        \item $f^{-1}(A) \cap f^{-1}(B) = f^{-1}(A \cap B) = \emptyset$.
+    \end{itemize}
+    Como M é conexo, temos duas opções: $f^{-1}(A) = \emptyset$ ou $f^{-1}(B) = \emptyset$.
+    Se $f^{-1}(A) = \emptyset$, como $A \subset Im(f)$, segue que $A = \emptyset$ e então $B = f(M)$.
+    Se $f^{-1}(B) = \emptyset$, analogo ao caso anterior temos, $B = \emptyset$ e $A = f(M)$.\\
+    Assim $\{A, B\}$ é a separação trivial de f(M).
+\end{prova}
+
+\begin{corolario}
+    Seja $f: M \rightarrow N$ homeomorfismo. Então, M é conexo se e somente se N é conexo.
+\end{corolario}
+
+\begin{exemplo}
+    \
+    \begin{itemize}
+        \item $M = \{x\}$ é conexo.
+        \item $[0, 1) \cup (1, 2]$ não é conexo. Basta perceber que $\{[0, 1), (1, 2]\}$ é separação, já que
+            $[0, 1) = (-1, 1) \cap M$ e $(1, 2] = (1, 3) \cap M$ são abertos. 
+    \end{itemize}
+\end{exemplo}
+
+\begin{theorem}
+    Se $I \subset \R$ é um intervalo, então I é conexo. Mais ainda, os únicos conexos de $\R$ são intervalos ou conjuntos com um único ponto.
+\end{theorem}
+
+\begin{prova}
+    COMPLETAR!
+\end{prova}
+
+\end{document}
