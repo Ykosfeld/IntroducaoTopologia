@@ -238,7 +238,61 @@
 \end{theorem}
 
 \begin{prova}
-    COMPLETAR!
+    Tomemos I intervalo de $\R$ e suponhamos que admite uma separação não trivial $\{A, B\}$.\\
+    $\exists a \in A, b \in B$.
+    Podemos supor que $a < b$. 
+    Como I é um intervalo, vale $[a, b] \subset I$.
+    Defina $C = \{x \in [a, b] \: | \: [a, x] \subset A\}$. 
+    Vamos mostrar que $C \subset A$.\\
+    Primeiro vamos mostrar que $C \neq \emptyset$. $a \in A$, como A é aberto em I.
+    $\Rightarrow A \cap [a,b]$ é aberto em $[a,b]$.\\
+    $\Rightarrow \: \exists \eps > 0 \: (a-\eps, a+\eps) \cap [a, b] \subset A$.\\
+    Como $C \neq \emptyset$ e é limitado pois $C \subset [a,b]$. Existe $c = \sup(C)$.
+    Como $\{A, B\}$ é separação, então $c \in A$ ou $c \in B$.
+    \textbf{Afirmação:} $c \notin B$.\\
+    Se $c \in B$, como B é aberto, $\exists \eps > 0$ tal que $(c-\eps, c+\eps) \subset B$.
+    Logo $c-\eps/2$ é uma cota superior de C menor que c. Absurdo, já que c é $\sup(C)$. Então $c \in A$.
+    \textbf{Afirmação:} $\sup(C) = b$
+    Se $c < b$, como A é aberto, $\exists \eps > 0$ tal que $(c-\eps, c+\eps) \subset A$.
+    Como $c = \sup(C)$, $\exists x \in (c-\eps/2, c]$ tal que\\
+    $x \in C \: \Rightarrow \: [a,x] \subset A \: \Rightarrow \: (c-\eps, c + \eps/2] \subset A$.
+    Logo a união $[a, c+\eps/2]$ está contido em A, logo $c+\eps/2 \in C$, absurdo já que $c = \sup(C)$.
+    Então $c = b$ e portanto $b \in A \cap B$ um absurdo. 
+\end{prova}
+
+\begin{exemplo}
+    \
+    \begin{itemize}
+        \item $S^1$ é conexo
+        \item $S^1$ não é homeomorfo a nenhum intervalo de $\R$.
+    \end{itemize}
+\end{exemplo}
+
+\begin{corolario}[\textbf{Teorema do Valor Intermediario}]
+    Se $f: [a, b] \rightarrow \R$ é contínua e $f(a) < f(b)$, então $\forall \: d \in [f(a), f(b)]$ $\exists \: c \in [a, b]$ tal que $f(c) = d$. 
+\end{corolario}
+
+\begin{prova}
+    COMPLETAR !!
+\end{prova}
+
+\begin{lema}
+    Se M é espaço métrico, $\{A, B\}$ separação de M e $X \subset M$ é conexo, então $X \subset A$ ou $X \subset B$. 
+\end{lema}
+
+\begin{prova}
+    $\{A \cap X, B \cap X\}$ é separação de X. Então ou $A \cap X = X$ ou $B \cap X = X$. Logo ou $X \subset A$ ou $X \subset B$.
+\end{prova}
+
+\begin{proposicao}
+    Se $X \subset Y \subset \overline{X} \subset M$ com X conexo, então Y é conexo.
+\end{proposicao}
+
+\begin{prova}
+    Seja $\{A, B\}$ separação de Y. Pelo lema anterior, como X é conexo, então ou $X \subset A$ ou $X \subset B$.
+    Suponhamos que $X \subset A$, como A é fechado em Y $\overline{X}^Y \subset \overline{A}^Y = A$.
+    Mas $\overline{X}^Y = \overline{X}^M \cap Y$. Logo $Y = A$.
+    $\Rightarrow \{A, B\}$ é separação trivial de Y.
 \end{prova}
 
 \end{document}

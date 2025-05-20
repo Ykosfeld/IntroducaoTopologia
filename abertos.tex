@@ -27,6 +27,8 @@
 
 \maketitle
 
+\section*{Bolas Abertas}
+
 O estudo de conjuntos abertos é motivado por querer entender a forma de um espaço metrico olhando 
 para as vizinhanças de todos os pontos desse espaço. Vamos relembrar alguns
 detalhes importantes sobre distâncias.
@@ -74,5 +76,65 @@ Então segue que se $y \in B((x_1, \dots, x_n), \varepsilon)$, $d_i(x_i, y_i) < 
 Equivalente a dizer que $\forall i \quad y_i \in B(x_i, \varepsilon)$ e então $y \in  B(x_1, \varepsilon) \times \dots \times  B(x_n, \varepsilon)$.
 Agora tome $y \in  B(x_1, \varepsilon) \times \dots \times  B(x_n, \varepsilon)$, note que para cada $i$, $y_i \in B(x_i, \varepsilon)$.
 Logo pela definição de bola e da distância produto vale $d(y, x) < \varepsilon$. Donde segue que $y \in B(x, \varepsilon)$.
+
+Podemos então perceber que a bola com a distância produto são quadrados de lado $2 \varepsilon$.
+
+Outra bola interessante é a bola da distância induzida. Seja então (M, d) um espaço metrico e $A \subset M$ 
+com a distância induzida. Vamos representar a bola da distância induzida em A por $B_A(x, \varepsilon)$,
+para um dado $x \in A$ e raio $\varepsilon$. Vamos provar que $B_A(x, \varepsilon) = B(x, \varepsilon) \cap A$.
+Tome $y \in B_A(x, \varepsilon)$, então $d(x, y) < \varepsilon$, donde segue que $y \in B(x, \varepsilon) \cap A$.
+Agora tome $y \in B(x, \varepsilon) \cap A$, então $d_A(x, y) < \varepsilon$ e segue que $y \in B_A(x, \varepsilon)$.
+
+\section*{Conjuntos Abertos}
+
+Primeiro vamos definir alguns objetos para depois entender as suas propriedades e relações.
+
+\begin{definition}[\textbf{Conjunto Aberto}]
+    $U \subset M$ é \textbf{conjunto aberto} se $\forall \: x \in U$ $\exists \: \varepsilon > 0$ tal que $B(x, \varepsilon) \subset U$.
+\end{definition}
+
+\begin{definition}[\textbf{Vizinhança}]
+    U é uma \textbf{vizinhança} de x se U aberto tal que $x \in U$.
+\end{definition}
+
+\begin{definition}[\textbf{Topologia}]
+    Seja (M, d) espaço metrico, dizemos que \textbf{topologia} é a familia de todos os subconjuntos abertos de M.
+    \[ \mathcal{T} = \{ U \subset M \: | \: \text{U é aberto}\} \]
+\end{definition}
+
+Um primeiro exemplo simples é que todo intervalo aberto (a,b) em $\mathbb{R}$ é aberto.
+Para isso basta tomar $\varepsilon \leq \min\{x-a. b-x\}$. Como já vimos anteriormente, 
+$B(x, \varepsilon) = (x - \varepsilon, x + \varepsilon)$, então se $y \in (x - \varepsilon, x + \varepsilon)$
+temos $ x - \varepsilon < y < x + \varepsilon $, donde segue:
+\begin{align*}
+    y &> x - \varepsilon \\
+    y &> x - x + a = a
+\end{align*}
+e
+\begin{align*}
+    y &< x + \varepsilon \\
+    y &< x - x + b = b
+\end{align*}
+Logo $y \in (a, b)$.
+
+Podemos também mostrar que em $\mathbb{R}$, qualquer conjunto formado por apenas um ponto, 
+não é aberto em $\mathbb{R}$. Vamos mostrar que {x} não é aberto em $\mathbb{R}$. Note que
+para todo $\varepsilon > 0$, $(x - \varepsilon, x + \varepsilon) \setminus \{x\} \neq \emptyset$.
+Tome então $y \in (x - \varepsilon, x + \varepsilon) \setminus \{x\}$, logo $y \neq x$ e então 
+$y \notin \{x\}$. Assim $B(x, \varepsilon) \subseteq \{x\}$ e não é aberto.
+
+Podemos extender nosso exemplo para o caso de $\mathbb{R}^2$. Como vimos, um intervalo aberto de $\mathbb{R}$
+é aberto em $\mathbb{R}$. Tomando então dois invervalos abertos $(a, b), (c, d)$ temos 
+$\varepsilon_1, \varepsilon_2 > 0$ tais que $B(x, \varepsilon_1) \subset (a, b)$ e $B(y, \varepsilon_2) \subset (c, d)$.
+Defina então $\varepsilon = \min\{\varepsilon_1, \varepsilon_2\}$ e então, lembrando da propriedade de que uma bola aberta em $\mathbb{R}^2$ é igual ao produto de duas bolas abertas em $\mathbb{R}$, segue:
+\[B((x, y), \varepsilon) = (x-\varepsilon, x+\varepsilon) \times (y-\varepsilon, y+\varepsilon) \subset (x-\varepsilon_1, x+\varepsilon_1) \times (y-\varepsilon_2, y+\varepsilon_2) \subset (a, b) \times (c, d)\]
+Logo é aberto em $\mathbb{R}^2$.
+
+Vamos mostrar agora que toda bola aberta é um subconjunto aberto.
+Tome então $z \in B(x, \varepsilon)$. Precisamos achar um $\varepsilon' >0$ tal que $B(z, \varepsilon') \subset B(x, \varepsilon)$.
+Vamos mostar que $\varepsilon' = \varepsilon - d(x, z)$ é suficiente.
+Tome $y \in B(z, \varepsilon')$, pela desigualdade triangular temos:
+\[d(y, x) \leq d(y, z) + d(z, x) < \varepsilon' + d(z, x) = \varepsilon - d(z, x) + d(z, x) = \varepsilon\]
+Logo $y \in B(x, \varepsilon)$. E então a bola aberta é um conjunto aberto.
 
 \end{document}
