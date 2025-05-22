@@ -309,4 +309,120 @@
     Assim $A = X$ e $B = \emptyset$.
 \end{prova}
 
+\begin{proposicao}
+    Se $M_1, M_2, \dots, M_n$ são espaços conexos, então
+    $M = M_1 \times M_2 \times \dots \times M_n$ é conexo. 
+\end{proposicao}
+
+\begin{prova}
+    Vamos provar por indução em n, quantidade de espaços conexos.\\
+    Como caso base vamos provar para $n = 2$. 
+    Sejam M e N conexos. Tome um ponto $(x, y')$ em $M \times N$.
+    Temos que $\{x\} \times N$ é homeomorfo a N, logo é conexo.
+    De maneira analoga temos que $M \times \{y'\}$ é conexo.
+    Defina então $C_x = (\{x\} \times N) \cup (M \times \{y'\})$.
+    $C_x$ é conexo pois é união de dois conexos com um ponto em comum, $(x, y')$.
+    Agora $M \times N = \bigcup_{x \in M} C_x$, com cada $C_x$ conexo 
+    e $\bigcap_{x \in M} C_x = M \times \{y'\}$.
+    Então pela proposicao novamente, $M \times N$ é conexo.
+    Seguindo pela indução temos:
+    \[M_1 \times \dots \times M_n \times M_{n+1} = (M_1 \times \dots \times M_n) \times M_{n+1}\]
+    Então pela hipotese de indução, é conexo.
+\end{prova}
+
+\begin{definition}[\textbf{Componentes Conexas}]
+    Dado M espaço métrico, definimos $\sim$ em M, x $\sim$ y se existe 
+    $C \subset M$ conexo tal que $x, y \in C$. 
+    Chamamos as classes de N como \textbf{componentes conexas} de M.
+\end{definition}
+
+\begin{proposicao}
+    M espaço métrico, $\{C_i\}_{i\in I}$ as componentes conexas de M. Então:
+    \begin{enumerate}
+        \item $M = \bigcup_{i \in I} C_i$.
+        \item Se $i \neq j$ então $C_i \cap C_j = \emptyset$.
+        \item Cada $C_i$ é conexa.
+        \item Se $C \subset M$ é conexo, então existe $i \in I$ tal que $C \subset C_i$.
+        \item Cada $C_i$ é fechada.
+        \item M é conexo se e somente se $|I| = 1$.
+    \end{enumerate}
+\end{proposicao}
+
+\begin{prova}
+    \textbf{(1) e (2)} são imediatos, pois $\sim$ é uma relação de equivalencia e
+    as classes formam uma partição do espaço.\\
+    \textbf{(3)}: Fixemos $x \in C_i$, e para cada $y \in C_i$ seja $D_y$ conexo de M
+    tal que $x, y \in D_y$.
+    Então $C_i = \bigcup_{y \in C_i} D_y$ e $\{x\} \subset \bigcap_{y \in C_i} D_y$.
+    Logo $C_i$ é união de conexos com um ponto em comum e portanto é conexo.\\
+    \textbf{(4)}: Se $C \subset M$ é conexoe $x \in C$, seja $C_i$ tal que $x \in C_i$.
+    $\forall \: y \in  C, y \sim x \Rightarrow y \in C_i \Rightarrow C \subset C_i$. \\
+    \textbf{(5)}: $C_i$ conexo, então $\overline{C_i}$ é conexo.
+    Mas pelo item (4) $\overline{C_i} \subset C_i$, portanto $C_i = \overline{C_i}$.\\
+    \textbf{(6)}: Trivial.
+\end{prova}
+
+\begin{atencao}
+    $C_i$ nem sempre é aberto.
+    Precisamos de uma quantidade finita de compontes conexas para que cada uma delas seja aberta.
+\end{atencao}
+
+\begin{definition}[\textbf{Totalmente Disconexo}]
+    Se $\forall i \in I$, $|C_i| = 1$, ou seja, $C_i$ é um único ponto, dizemos que 
+    M é \textbf{totalmente disconexo}.
+\end{definition}
+
+\begin{exemplo}
+    \
+    \begin{itemize}
+        \item $\mathbb{Q}$ é totalmente disconexo.
+        \item Todo espaço discreto é totalmente disconexo.
+    \end{itemize}
+\end{exemplo}
+
+\begin{atencao}
+    Conexão é uma propriedade global.
+     Ou seja, temos que entender todo o espaço para determinar se verifica a propriedade.
+\end{atencao}
+
+\begin{definition}[\textbf{Localmente Conexo}]
+    M é \textbf{localmente conexo} se $\forall \: x, \forall \: U_x$ vizinhança de x $\exists V_x$
+    vizinhança de x conexa com $V_x \subset U_x$.
+\end{definition}
+
+\begin{exemplo}
+    \
+    \begin{itemize}
+        \item $\R$ e $\R^n$ são localmente conexos.
+        \item $M = [0, 1) \cup (1, 2]$ é localmente conexo, mas não é conexo.
+    \end{itemize}
+\end{exemplo}
+
+\begin{proposicao}
+    Seja M espaço métrico localmente conexo, então toda componente conexa é aberta.
+\end{proposicao}
+
+\begin{prova}
+    Seja C componente conexa e $x \in C$.
+    $\exists \: V_x$ aberto conexo que contém x. 
+    Então $V_x \subset C$ e portanto x é ponto de interior de C.
+    Logo C é aberto. 
+\end{prova}
+
+\begin{theorem}
+    Seja M conexo, $\forall \: x \in M$ $\exists \: \eps > 0$ tal que $B(x, \eps)$ é separavél.
+    Então M é separavél.
+\end{theorem}
+
+\begin{prova}
+    Se considerarmos $A \subset M$ tal que se provarmos que $A = M$ então concluimos o teorema.
+    Para provarmos que $A = M$, mostraremos que 
+    \begin{enumerate}
+        \item $A \neq \emptyset$
+        \item A é aberto
+        \item A é fechado
+    \end{enumerate}
+    Assim como M é conexo, ganhamos que $A = M$.
+\end{prova}
+
 \end{document}
